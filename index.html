@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiba Haramayn (Pvt.) Limited | Official Corporate Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary-color: #0b3c5d;
+            --secondary-color: #328cc1;
+            --dark-color: #1d2731;
+            --light-color: #f9f9f9;
+            --gold-color: #d9b310;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark-color);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(29, 39, 49, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #f7d126;
+            transform: translateY(-2px);
+        }
+
+        /* Section Global Styling */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--gold-color);
+            bottom: 0;
+            left: 25%;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .about-img {
+            flex: 1;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 45px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Corporate Details Section */
+        .corporate-info {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .corporate-info .section-title h2 {
+            color: #ffffff;
+        }
+
+        .info-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .info-table th, .info-table td {
+            padding: 18px 25px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-table th {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--gold-color);
+            font-weight: 600;
+            width: 35%;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-item h4 {
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #aaa;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            border-top: 3px solid var(--gold-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 5%; }
+            .nav-links { display: none; } /* Simplification for brief code */
+            .hero h2 { font-size: 32px; }
+            .about-content, .contact-container { flex-direction: column; }
+            .info-table th, .info-table td { padding: 12px 15px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>TAIBA HARAMAYN</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#corporate">Corporate Profile</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>TAIBA HARAMAYN (PVT.) LIMITED</h2>
+        <p>Leading corporate excellence with trust, compliance, and premium business operations across Pakistan.</p>
+        <a href="#corporate" class="btn">View Corporate Status</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-title">
+            <h2>About Our Organization</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Incorporated in October 2023, <strong>Taiba Haramayn (Pvt.) Limited</strong> has quickly established itself as a credible and legally compliant corporate entity within the Pakistani business landscape.</p>
+                <p>Headquartered strategically, we strictly adhere to transparency, national regulatory compliance under the Income Tax Ordinance 2001, and strive to deliver high-value outcomes for our corporate partners and consumers alike.</p>
+                <p>Our focus revolves around driving economic progress, implementing robust corporate governance, and bringing unparalleled professional standards to our operational domains.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070" alt="Business Meeting">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Core Competencies</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Corporate Operations</h3>
+                <p>Execution of institutional operations with streamlined management protocols ensuring efficiency at all levels.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Regulatory Compliance</h3>
+                <p>Fully compliant with the Federal Board of Revenue (FBR) and government tax frameworks for legitimate business operations.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Business Consulting</h3>
+                <p>Providing essential partnership insights and corporate solutions structured to achieve sustainable commercial development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Information Section -->
+    <section id="corporate" class="corporate-info">
+        <div class="section-title">
+            <h2>FBR Registration Profile</h2>
+        </div>
+        <table class="info-table">
+            <tr>
+                <th>Company Name</th>
+                <td>TAIBA HARAMAYN (PVT.) LIMITED</td>
+            </tr>
+            <tr>
+                <th>Registration Number</th>
+                <td>0051179</td>
+            </tr>
+            <tr>
+                <th>Incorporation Number</th>
+                <td>850406832</td>
+            </tr>
+            <tr>
+                <th>Incorporation Date</th>
+                <td>25 October 2023</td>
+            </tr>
+            <tr>
+                <th>Activity Type</th>
+                <td>Business Operations</td>
+            </tr>
+            <tr>
+                <th>Registered Tax Office</th>
+                <td>CRO Islamabad</td>
+            </tr>
+            <tr>
+                <th>Official Address</th>
+                <td>East Circular Road, Near Hilton Hotel, D.I. Khan, Pakistan</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Connect With Us</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Headquarters</h4>
+                        <p>East Circular Road, Near Hilton Hotel,<br>D.I. Khan, Pakistan</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-building-shield"></i>
+                    <div>
+                        <h4>Tax Jurisdiction</h4>
+                        <p>CRO Islamabad, Federal Board of Revenue (FBR)</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Corporate Inquiries</h4>
+                        <p>info@taibaharamayn.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Taiba Haramayn (Pvt.) Limited. We will get back to you soon!');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name / Company Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message or Business Inquiry" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Taiba Haramayn (Pvt.) Limited. All Rights Reserved. Verified Corporate Entity under FBR Pakistan.</p>
+    </footer>
+
+</body>
+</html>
